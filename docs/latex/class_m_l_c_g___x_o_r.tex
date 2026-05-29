@@ -1,0 +1,205 @@
+\doxysection{MLCG\+\_\+\+XOR Class Reference}
+\hypertarget{class_m_l_c_g___x_o_r}{}\label{class_m_l_c_g___x_o_r}\index{MLCG\_XOR@{MLCG\_XOR}}
+
+
+Модифицированный LCG с нелинейным перемешиванием (MLCG-\/\+XOR).  
+
+
+
+
+{\ttfamily \#include $<$rng\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae}{result\+\_\+type}} = uint64\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9}{MLCG\+\_\+\+XOR}} (uint64\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует 64-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_a658c5b59d6df38047c469557f74c7499}{min}} ()
+\begin{DoxyCompactList}\small\item\em Минимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. \end{DoxyCompactList}\item 
+static constexpr uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_a7dce5f0c9d08f421d4aa56bd1228fabd}{max}} ()
+\begin{DoxyCompactList}\small\item\em Максимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_ae3d56f09d4f0102226a1ed17343e5c20}{state}}
+\begin{DoxyCompactList}\small\item\em Текущее состояние \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_ac063ad9efbfb41ae085e3a288213612a}{A}} = 0x9e3779b97f4a7c15\+ULL
+\begin{DoxyCompactList}\small\item\em Множитель (золотое сечение) \end{DoxyCompactList}\item 
+static constexpr uint64\+\_\+t \mbox{\hyperlink{class_m_l_c_g___x_o_r_ab94c6642b92bfe2a50eab5fb3f8687c6}{C}} = 0xbf58476d1ce4e5b9\+ULL
+\begin{DoxyCompactList}\small\item\em Приращение (нечётное) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Модифицированный LCG с нелинейным перемешиванием (MLCG-\/\+XOR). 
+
+Классический LCG\+: X\+\_\+\{n+1\} = (a \texorpdfstring{$\ast$}{*} X\+\_\+n + c) mod 2\texorpdfstring{$^\wedge$}{\string^}64. Модификации\+:
+\begin{DoxyItemize}
+\item Модуль 2\texorpdfstring{$^\wedge$}{\string^}64 за счёт естественного переполнения uint64\+\_\+t.
+\item Параметры a и c подобраны для полного периода 2\texorpdfstring{$^\wedge$}{\string^}64.
+\item После каждого шага применяется нелинейное перемешивание (XOR и сдвиги), устраняющее корреляцию младших битов. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae}\label{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae} 
+\index{MLCG\_XOR@{MLCG\_XOR}!result\_type@{result\_type}}
+\index{result\_type@{result\_type}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{result\_type}{result\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae}{MLCG\+\_\+\+XOR\+::result\+\_\+type}} = uint64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9}\label{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9} 
+\index{MLCG\_XOR@{MLCG\_XOR}!MLCG\_XOR@{MLCG\_XOR}}
+\index{MLCG\_XOR@{MLCG\_XOR}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{MLCG\_XOR()}{MLCG\_XOR()}}
+{\footnotesize\ttfamily MLCG\+\_\+\+XOR\+::\+MLCG\+\_\+\+XOR (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{seed = {\ttfamily 123456789} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор\+: сохраняет начальное состояние.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789).\\
+\hline
+{\em seed} & начальное значение (по умолчанию 123456789) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_a7dce5f0c9d08f421d4aa56bd1228fabd}\label{class_m_l_c_g___x_o_r_a7dce5f0c9d08f421d4aa56bd1228fabd} 
+\index{MLCG\_XOR@{MLCG\_XOR}!max@{max}}
+\index{max@{max}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily static constexpr uint64\+\_\+t MLCG\+\_\+\+XOR\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Максимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_m_l_c_g___x_o_r_a658c5b59d6df38047c469557f74c7499}\label{class_m_l_c_g___x_o_r_a658c5b59d6df38047c469557f74c7499} 
+\index{MLCG\_XOR@{MLCG\_XOR}!min@{min}}
+\index{min@{min}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily static constexpr uint64\+\_\+t MLCG\+\_\+\+XOR\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Минимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}\label{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825} 
+\index{MLCG\_XOR@{MLCG\_XOR}!next@{next}}
+\index{next@{next}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily uint64\+\_\+t MLCG\+\_\+\+XOR\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Генерирует 64-\/битное псевдослучайное число. 
+
+Генерирует следующее псевдослучайное 64-\/битное число.
+
+\begin{DoxyReturn}{Returns}
+64-\/битное число, равномерно распределённое в \mbox{[}0, 2\texorpdfstring{$^\wedge$}{\string^}64-\/1\mbox{]}.
+\end{DoxyReturn}
+Шаги\+:
+\begin{DoxyEnumerate}
+\item Выполняется LCG-\/шаг\+: state = A \texorpdfstring{$\ast$}{*} state + C. Переполнение uint64\+\_\+t автоматически берёт результат по модулю 2\texorpdfstring{$^\wedge$}{\string^}64. Параметры A и C подобраны так, чтобы период был максимальным (2\texorpdfstring{$^\wedge$}{\string^}64).
+\item К полученному состоянию применяются три битовые операции\+:
+\begin{DoxyItemize}
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 31) // сдвиг вправо и XOR
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 25) // сдвиг влево и XOR
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 28) // ещё один сдвиг вправо Эти операции нелинейны и хорошо перемешивают биты, разрушая корреляцию младших битов, свойственную LCG. 
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_ac063ad9efbfb41ae085e3a288213612a}\label{class_m_l_c_g___x_o_r_ac063ad9efbfb41ae085e3a288213612a} 
+\index{MLCG\_XOR@{MLCG\_XOR}!A@{A}}
+\index{A@{A}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily constexpr uint64\+\_\+t MLCG\+\_\+\+XOR\+::A = 0x9e3779b97f4a7c15\+ULL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Множитель (золотое сечение) 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_m_l_c_g___x_o_r_ab94c6642b92bfe2a50eab5fb3f8687c6}\label{class_m_l_c_g___x_o_r_ab94c6642b92bfe2a50eab5fb3f8687c6} 
+\index{MLCG\_XOR@{MLCG\_XOR}!C@{C}}
+\index{C@{C}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily constexpr uint64\+\_\+t MLCG\+\_\+\+XOR\+::C = 0xbf58476d1ce4e5b9\+ULL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Приращение (нечётное) 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_m_l_c_g___x_o_r_ae3d56f09d4f0102226a1ed17343e5c20}\label{class_m_l_c_g___x_o_r_ae3d56f09d4f0102226a1ed17343e5c20} 
+\index{MLCG\_XOR@{MLCG\_XOR}!state@{state}}
+\index{state@{state}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily uint64\+\_\+t MLCG\+\_\+\+XOR\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Текущее состояние 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rng__generators_8hpp}{rng\+\_\+generators.\+hpp}}\item 
+\mbox{\hyperlink{rng__generators_8cpp}{rng\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

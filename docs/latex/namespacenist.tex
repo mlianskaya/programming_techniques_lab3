@@ -1,0 +1,45 @@
+\doxysection{nist Namespace Reference}
+\hypertarget{namespacenist}{}\label{namespacenist}\index{nist@{nist}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnist_1_1_block_frequency_test}{Block\+Frequency\+Test}}
+\begin{DoxyCompactList}\small\item\em Блочный частотный тест — проверяет равномерность распределения единиц внутри блоков фиксированного размера. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_cumulative_sums_test}{Cumulative\+Sums\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест кумулятивных сумм — проверяет, насколько сильно отклоняется накопленная сумма (присваивая биту \textquotesingle{}1\textquotesingle{} +1, биту \textquotesingle{}0\textquotesingle{} –1) от нуля. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_frequency_test}{Frequency\+Test}}
+\begin{DoxyCompactList}\small\item\em Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/2. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_longest_run_test}{Longest\+Run\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест на самую длинную серию — проверяет, не является ли максимальная длина серии в блоках слишком большой (что указывает на неслучайность). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_runs_test}{Runs\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespacenist_a827291712dbdca780333cd14dec10159}{erfc}} (double x)
+\begin{DoxyCompactList}\small\item\em Дополнительная функция ошибок (erfc) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacenist_a827291712dbdca780333cd14dec10159}\label{namespacenist_a827291712dbdca780333cd14dec10159} 
+\index{nist@{nist}!erfc@{erfc}}
+\index{erfc@{erfc}!nist@{nist}}
+\doxysubsubsection{\texorpdfstring{erfc()}{erfc()}}
+{\footnotesize\ttfamily double nist\+::erfc (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Дополнительная функция ошибок (erfc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & аргумент. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ erf(x) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+

@@ -1,0 +1,303 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Программа для тестирования трёх модифицированных генераторов псевдослучайных чисел.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include "{}rng\+\_\+generators.\+hpp"{}}\newline
+{\ttfamily \#include "{}Chi\+Squared.\+hpp"{}}\newline
+{\ttfamily \#include "{}NISTTests.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\double \mbox{\hyperlink{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e}{mean}} (const std\+::vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет выборочное среднее. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\double \mbox{\hyperlink{main_8cpp_a863a7a75b18c4556a2b994572dadd835}{stddev}} (const std\+::vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет выборочное стандартное отклонение. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\double \mbox{\hyperlink{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe}{variability}} (const std\+::vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет коэффициент вариации (относительное стандартное отклонение). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ bool $>$ \mbox{\hyperlink{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9}{to\+Bits}} (const std\+::vector$<$ T $>$ \&sample, int bits\+Per\+Number)
+\begin{DoxyCompactList}\small\item\em Преобразует вектор целых чисел в вектор битов (младшие биты сначала). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator $>$ }\\std\+::vector$<$ std\+::vector$<$ typename Generator\+::result\+\_\+type $>$ $>$ \mbox{\hyperlink{main_8cpp_ad143486e425f8464d243e365b06bf682}{generate\+Samples}} (Generator \&gen, size\+\_\+t num\+Samples, size\+\_\+t sample\+Size)
+\begin{DoxyCompactList}\small\item\em Генерирует заданное количество выборок указанного размера с помощью переданного генератора. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363}{print\+Stats}} (const std\+::string \&name, const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&samples, T min\+Val, T max\+Val, double significance)
+\begin{DoxyCompactList}\small\item\em Выводит для каждой выборки среднее, стандартное отклонение, коэффициент вариации и результат критерия хи-\/квадрат. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8}{run\+NISTTests}} (const std\+::string \&name, const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&samples, double significance)
+\begin{DoxyCompactList}\small\item\em Применяет пять тестов NIST ко всем выборкам (объединяя их в одну битовую последовательность). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator $>$ }\\std\+::vector$<$ uint64\+\_\+t $>$ \mbox{\hyperlink{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52}{measure\+Times}} (Generator \&gen, const std\+::vector$<$ size\+\_\+t $>$ \&sizes)
+\begin{DoxyCompactList}\small\item\em Замеряет время генерации заданного количества чисел для переданного генератора. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Программа для тестирования трёх модифицированных генераторов псевдослучайных чисел. 
+
+
+\begin{DoxyEnumerate}
+\item Генерирует 20 выборок по 20 000 элементов для каждого генератора.
+\item Для каждой выборки вычисляет среднее, стандартное отклонение и коэффициент вариации.
+\item Проверяет равномерность распределения каждой выборки критерием хи-\/квадрат (уровень значимости 0.\+05).
+\item Применяет пять тестов NIST (частотный, блочный частотный, на серии, на длину серии, кумулятивных сумм).
+\item Замеряет время генерации от 1 000 до 1 000 000 чисел и сохраняет результаты в CSV.
+\item Результаты хи-\/квадрат и NIST выводятся в консоль. 
+\end{DoxyEnumerate}
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ad143486e425f8464d243e365b06bf682}\label{main_8cpp_ad143486e425f8464d243e365b06bf682} 
+\index{main.cpp@{main.cpp}!generateSamples@{generateSamples}}
+\index{generateSamples@{generateSamples}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{generateSamples()}{generateSamples()}}
+{\footnotesize\ttfamily template$<$typename Generator $>$ \\
+std\+::vector$<$ std\+::vector$<$ typename Generator\+::result\+\_\+type $>$ $>$ generate\+Samples (\begin{DoxyParamCaption}\item[{Generator \&}]{gen,  }\item[{size\+\_\+t}]{num\+Samples,  }\item[{size\+\_\+t}]{sample\+Size }\end{DoxyParamCaption})}
+
+
+
+Генерирует заданное количество выборок указанного размера с помощью переданного генератора. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & тип генератора (должен иметь метод next()). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em gen} & ссылка на генератор. \\
+\hline
+{\em num\+Samples} & количество выборок. \\
+\hline
+{\em sample\+Size} & размер каждой выборки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+вектор векторов сгенерированных чисел. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e}\label{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e} 
+\index{main.cpp@{main.cpp}!mean@{mean}}
+\index{mean@{mean}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double mean (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Вычисляет выборочное среднее. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & числовой тип элементов выборки. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & вектор значений. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+среднее арифметическое. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52}\label{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52} 
+\index{main.cpp@{main.cpp}!measureTimes@{measureTimes}}
+\index{measureTimes@{measureTimes}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{measureTimes()}{measureTimes()}}
+{\footnotesize\ttfamily template$<$typename Generator $>$ \\
+std\+::vector$<$ uint64\+\_\+t $>$ measure\+Times (\begin{DoxyParamCaption}\item[{Generator \&}]{gen,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{sizes }\end{DoxyParamCaption})}
+
+
+
+Замеряет время генерации заданного количества чисел для переданного генератора. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & тип генератора. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em gen} & ссылка на генератор. \\
+\hline
+{\em sizes} & вектор размеров (количеств генерируемых чисел). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+вектор времени в наносекундах для каждого размера. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363}\label{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363} 
+\index{main.cpp@{main.cpp}!printStats@{printStats}}
+\index{printStats@{printStats}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{printStats()}{printStats()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void print\+Stats (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{samples,  }\item[{T}]{min\+Val,  }\item[{T}]{max\+Val,  }\item[{double}]{significance }\end{DoxyParamCaption})}
+
+
+
+Выводит для каждой выборки среднее, стандартное отклонение, коэффициент вариации и результат критерия хи-\/квадрат. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & тип генератора (используется для получения min/max). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & имя генератора. \\
+\hline
+{\em samples} & вектор выборок. \\
+\hline
+{\em significance} & уровень значимости для хи-\/квадрат теста. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8}\label{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8} 
+\index{main.cpp@{main.cpp}!runNISTTests@{runNISTTests}}
+\index{runNISTTests@{runNISTTests}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runNISTTests()}{runNISTTests()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void run\+NISTTests (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{samples,  }\item[{double}]{significance }\end{DoxyParamCaption})}
+
+
+
+Применяет пять тестов NIST ко всем выборкам (объединяя их в одну битовую последовательность). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & тип генератора (используется для получения размера типа). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & имя генератора. \\
+\hline
+{\em samples} & вектор выборок. \\
+\hline
+{\em significance} & уровень значимости для NIST тестов. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a863a7a75b18c4556a2b994572dadd835}\label{main_8cpp_a863a7a75b18c4556a2b994572dadd835} 
+\index{main.cpp@{main.cpp}!stddev@{stddev}}
+\index{stddev@{stddev}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{stddev()}{stddev()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double stddev (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Вычисляет выборочное стандартное отклонение. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & числовой тип элементов выборки. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & вектор значений. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+стандартное отклонение (корень из дисперсии). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9}\label{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9} 
+\index{main.cpp@{main.cpp}!toBits@{toBits}}
+\index{toBits@{toBits}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{toBits()}{toBits()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ bool $>$ to\+Bits (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{sample,  }\item[{int}]{bits\+Per\+Number }\end{DoxyParamCaption})}
+
+
+
+Преобразует вектор целых чисел в вектор битов (младшие биты сначала). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & целочисленный тип (должен поддерживать побитовые операции). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & вектор чисел. \\
+\hline
+{\em bits\+Per\+Number} & сколько младших битов использовать (обычно sizeof(\+T)\texorpdfstring{$\ast$}{*}8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+вектор bool, представляющий битовую строку. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe}\label{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe} 
+\index{main.cpp@{main.cpp}!variability@{variability}}
+\index{variability@{variability}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{variability()}{variability()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double variability (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Вычисляет коэффициент вариации (относительное стандартное отклонение). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & числовой тип элементов выборки. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & вектор значений. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+отношение стандартного отклонения к среднему. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

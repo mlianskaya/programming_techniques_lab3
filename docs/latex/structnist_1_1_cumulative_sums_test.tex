@@ -1,0 +1,61 @@
+\doxysection{nist\+::Cumulative\+Sums\+Test Struct Reference}
+\hypertarget{structnist_1_1_cumulative_sums_test}{}\label{structnist_1_1_cumulative_sums_test}\index{nist::CumulativeSumsTest@{nist::CumulativeSumsTest}}
+
+
+Тест кумулятивных сумм — проверяет, насколько сильно отклоняется накопленная сумма (присваивая биту \textquotesingle{}1\textquotesingle{} +1, биту \textquotesingle{}0\textquotesingle{} –1) от нуля.  
+
+
+
+
+{\ttfamily \#include $<$NISTTests.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnist_1_1_cumulative_sums_test_ad4ee724926af1b5d9a672ef6e85eec43}{Cumulative\+Sums\+Test}} (const std\+::vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structnist_1_1_cumulative_sums_test_a6412749630a390414a53bac92eb0f5ef}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Тест кумулятивных сумм — проверяет, насколько сильно отклоняется накопленная сумма (присваивая биту \textquotesingle{}1\textquotesingle{} +1, биту \textquotesingle{}0\textquotesingle{} –1) от нуля. 
+
+Вычисляются максимальное положительное и отрицательное отклонения S\+\_\+max и S\+\_\+min. Нормированные значения\+: z1 = S\+\_\+max / √n, z2 = \texorpdfstring{$\vert$}{|}\+S\+\_\+min\texorpdfstring{$\vert$}{|} / √n. p-\/value = P(z) = Σ\+\_\+\{k=-\/∞\}\texorpdfstring{$^\wedge$}{\string^}\{∞\} \mbox{[}erfc((2k+1)z/√2) -\/ erfc((2k-\/1)z/√2)\mbox{]}. Окончательный p-\/value = min(P(z1), P(z2)). Малое p-\/value означает, что накопленная сумма слишком часто (или слишком редко) пересекает нуль. 
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00195}{195}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_cumulative_sums_test_ad4ee724926af1b5d9a672ef6e85eec43}\label{structnist_1_1_cumulative_sums_test_ad4ee724926af1b5d9a672ef6e85eec43} 
+\index{nist::CumulativeSumsTest@{nist::CumulativeSumsTest}!CumulativeSumsTest@{CumulativeSumsTest}}
+\index{CumulativeSumsTest@{CumulativeSumsTest}!nist::CumulativeSumsTest@{nist::CumulativeSumsTest}}
+\doxysubsubsection{\texorpdfstring{CumulativeSumsTest()}{CumulativeSumsTest()}}
+{\footnotesize\ttfamily nist\+::\+Cumulative\+Sums\+Test\+::\+Cumulative\+Sums\+Test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00198}{198}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_cumulative_sums_test_a6412749630a390414a53bac92eb0f5ef}\label{structnist_1_1_cumulative_sums_test_a6412749630a390414a53bac92eb0f5ef} 
+\index{nist::CumulativeSumsTest@{nist::CumulativeSumsTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::CumulativeSumsTest@{nist::CumulativeSumsTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily double nist\+::\+Cumulative\+Sums\+Test\+::p\+\_\+value}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00196}{196}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_i_s_t_tests_8hpp}{NISTTests.\+hpp}}\end{DoxyCompactItemize}

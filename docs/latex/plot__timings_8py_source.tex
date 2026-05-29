@@ -1,0 +1,22 @@
+\doxysection{plot\+\_\+timings.\+py}
+\hypertarget{plot__timings_8py_source}{}\label{plot__timings_8py_source}\mbox{\hyperlink{plot__timings_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00001}\mbox{\hyperlink{namespaceplot__timings}{00001}}\ \textcolor{keyword}{import}\ pandas\ \textcolor{keyword}{as}\ pd}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00002}00002\ \textcolor{keyword}{import}\ matplotlib.pyplot\ \textcolor{keyword}{as}\ plt}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00004}\mbox{\hyperlink{namespaceplot__timings_a1a904a1c1b22e49bb0b5a7483da2962a}{00004}}\ df\ =\ pd.read\_csv(\textcolor{stringliteral}{"{}timings.csv"{}})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00005}\mbox{\hyperlink{namespaceplot__timings_a887f630a97905bb8f036329b6d17ec7e}{00005}}\ plt.figure(figsize=(8,6))}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00006}\mbox{\hyperlink{namespaceplot__timings_a293461336e20fb11148559fb3124d24a}{00006}}\ plt.plot(df[\textcolor{stringliteral}{'size'}],\ df[\textcolor{stringliteral}{'MLCG\_XOR'}]\ /\ 1e9,\ \textcolor{stringliteral}{'o-\/'},\ label=\textcolor{stringliteral}{'MLCG-\/XOR'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00007}00007\ plt.plot(df[\textcolor{stringliteral}{'size'}],\ df[\textcolor{stringliteral}{'LFG\_XOR'}]\ /\ 1e9,\ \textcolor{stringliteral}{'s-\/'},\ label=\textcolor{stringliteral}{'LFG-\/XOR'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00008}00008\ plt.plot(df[\textcolor{stringliteral}{'size'}],\ df[\textcolor{stringliteral}{'Xorshift128\_MLT'}]\ /\ 1e9,\ \textcolor{stringliteral}{'\string^-\/'},\ label=\textcolor{stringliteral}{'Xorshift128-\/MLT'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00009}00009\ plt.xscale(\textcolor{stringliteral}{'log'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00010}00010\ plt.yscale(\textcolor{stringliteral}{'log'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00011}00011\ plt.xlabel(\textcolor{stringliteral}{'Number\ of\ generated\ numbers'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00012}00012\ plt.ylabel(\textcolor{stringliteral}{'Time\ (seconds)'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00013}00013\ plt.title(\textcolor{stringliteral}{'PRNG\ Performance\ Comparison'})}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00014}00014\ plt.legend()}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00015}\mbox{\hyperlink{namespaceplot__timings_aabb8c5326c6acc23533b031b520fd978}{00015}}\ plt.grid(\textcolor{keyword}{True},\ which=\textcolor{stringliteral}{'both'},\ linestyle=\textcolor{stringliteral}{'-\/-\/'},\ alpha=0.7)}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00016}\mbox{\hyperlink{namespaceplot__timings_aa6e6e5c06fb7e7781a2cc3e3eabd9711}{00016}}\ plt.savefig(\textcolor{stringliteral}{'prng\_performance.png'},\ dpi=150)}
+\DoxyCodeLine{\Hypertarget{plot__timings_8py_source_l00017}00017\ plt.show()}
+
+\end{DoxyCode}

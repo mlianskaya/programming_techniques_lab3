@@ -1,0 +1,121 @@
+\doxysection{custom Namespace Reference}
+\hypertarget{namespacecustom}{}\label{namespacecustom}\index{custom@{custom}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}} \{ \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a4ceeb02eaaf32c9b4d2b2a841da927b1}{UNIFORM\+\_\+\+INT}}
+, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a643cdf96101ab65dbfcb125f0c1506c8}{UNIFORM\+\_\+\+REAL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Тип распределения\+: целочисленное равномерное или непрерывное равномерное. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Number $>$ }\\std\+::pair$<$ double, std\+::size\+\_\+t $>$ \mbox{\hyperlink{namespacecustom_aeaf50ca8e1ffb6be2c87e235e1620717}{chi\+\_\+squared}} (const std\+::vector$<$ Number $>$ \&sample, Number min, Number max, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Вычисляет статистику хи-\/квадрат и число степеней свободы для выборки. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Number $>$ }\\bool \mbox{\hyperlink{namespacecustom_aa29ff4e045ea5489e56db6fecbfb540e}{chi\+\_\+squared\+\_\+test}} (const std\+::vector$<$ Number $>$ \&sample, Number min, Number max, double significance, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Проверяет гипотезу о равномерном распределении выборки по критерию хи-\/квадрат. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}\label{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78} 
+\index{custom@{custom}!DistributionType@{DistributionType}}
+\index{DistributionType@{DistributionType}!custom@{custom}}
+\doxysubsubsection{\texorpdfstring{DistributionType}{DistributionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{custom\+::\+Distribution\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Тип распределения\+: целочисленное равномерное или непрерывное равномерное. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNIFORM\_INT@{UNIFORM\_INT}!custom@{custom}}\index{custom@{custom}!UNIFORM\_INT@{UNIFORM\_INT}}}\Hypertarget{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a4ceeb02eaaf32c9b4d2b2a841da927b1}\label{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a4ceeb02eaaf32c9b4d2b2a841da927b1} 
+UNIFORM\+\_\+\+INT&Дискретное равномерное на \mbox{[}min, max\mbox{]} (целые) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNIFORM\_REAL@{UNIFORM\_REAL}!custom@{custom}}\index{custom@{custom}!UNIFORM\_REAL@{UNIFORM\_REAL}}}\Hypertarget{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a643cdf96101ab65dbfcb125f0c1506c8}\label{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a643cdf96101ab65dbfcb125f0c1506c8} 
+UNIFORM\+\_\+\+REAL&Непрерывное равномерное на \mbox{[}min, max) (вещественные) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_chi_squared_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{_chi_squared_8hpp_source}{Chi\+Squared.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecustom_aeaf50ca8e1ffb6be2c87e235e1620717}\label{namespacecustom_aeaf50ca8e1ffb6be2c87e235e1620717} 
+\index{custom@{custom}!chi\_squared@{chi\_squared}}
+\index{chi\_squared@{chi\_squared}!custom@{custom}}
+\doxysubsubsection{\texorpdfstring{chi\_squared()}{chi\_squared()}}
+{\footnotesize\ttfamily template$<$typename Number $>$ \\
+std\+::pair$<$ double, std\+::size\+\_\+t $>$ custom\+::chi\+\_\+squared (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Number $>$ \&}]{sample,  }\item[{Number}]{min,  }\item[{Number}]{max,  }\item[{\mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Вычисляет статистику хи-\/квадрат и число степеней свободы для выборки. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Number} & Числовой тип элементов выборки (должен поддерживать сравнение, преобразование к double). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор наблюдаемых значений. \\
+\hline
+{\em min} & Минимальное возможное значение (включительно). \\
+\hline
+{\em max} & Максимальное возможное значение (включительно для UNIFORM\+\_\+\+INT, исключительно для UNIFORM\+\_\+\+REAL). \\
+\hline
+{\em type} & Тип распределения (целочисленное или непрерывное). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$double, std\+::size\+\_\+t$>$ Первый элемент — значение хи-\/квадрат, второй — число степеней свободы. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & если min \texorpdfstring{$>$}{>}= max, или размер выборки \texorpdfstring{$<$}{<} 2, или значение выборки вне диапазона. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_chi_squared_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{_chi_squared_8hpp_source}{Chi\+Squared.\+hpp}}.
+
+\Hypertarget{namespacecustom_aa29ff4e045ea5489e56db6fecbfb540e}\label{namespacecustom_aa29ff4e045ea5489e56db6fecbfb540e} 
+\index{custom@{custom}!chi\_squared\_test@{chi\_squared\_test}}
+\index{chi\_squared\_test@{chi\_squared\_test}!custom@{custom}}
+\doxysubsubsection{\texorpdfstring{chi\_squared\_test()}{chi\_squared\_test()}}
+{\footnotesize\ttfamily template$<$typename Number $>$ \\
+bool custom\+::chi\+\_\+squared\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Number $>$ \&}]{sample,  }\item[{Number}]{min,  }\item[{Number}]{max,  }\item[{double}]{significance,  }\item[{\mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Проверяет гипотезу о равномерном распределении выборки по критерию хи-\/квадрат. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Number} & Тип элементов выборки. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор наблюдаемых значений. \\
+\hline
+{\em min} & Минимальное возможное значение. \\
+\hline
+{\em max} & Максимальное возможное значение. \\
+\hline
+{\em significance} & Уровень значимости. Должен быть в интервале (0,1). \\
+\hline
+{\em type} & Тип распределения (UNIFORM\+\_\+\+INT или UNIFORM\+\_\+\+REAL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если гипотеза о равномерном распределении не отвергается на данном уровне значимости. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_chi_squared_8hpp_source_l00113}{113}} of file \mbox{\hyperlink{_chi_squared_8hpp_source}{Chi\+Squared.\+hpp}}.
+

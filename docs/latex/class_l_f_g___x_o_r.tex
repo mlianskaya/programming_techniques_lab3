@@ -1,0 +1,272 @@
+\doxysection{LFG\+\_\+\+XOR Class Reference}
+\hypertarget{class_l_f_g___x_o_r}{}\label{class_l_f_g___x_o_r}\index{LFG\_XOR@{LFG\_XOR}}
+
+
+Генератор Фибоначчи с запаздыванием и XOR (LFG-\/\+XOR).  
+
+
+
+
+{\ttfamily \#include $<$rng\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_l_f_g___x_o_r_a93a97498605af287be38a61009ef0f1e}{result\+\_\+type}} = uint32\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_l_f_g___x_o_r_aedee0d3555a3c24dc0a9198a3fbd0075}{LFG\+\_\+\+XOR}} (uint32\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует 32-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{class_l_f_g___x_o_r_a632448268ea39161ceffb83456c0a2f8}{min}} ()
+\begin{DoxyCompactList}\small\item\em Минимальное значение, возвращаемое \doxylink{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}{next()}. \end{DoxyCompactList}\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{class_l_f_g___x_o_r_a498cca65253cb75a4e52303f095b794f}{max}} ()
+\begin{DoxyCompactList}\small\item\em Максимальное значение, возвращаемое \doxylink{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}{next()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_l_f_g___x_o_r_aeb380a558c99d672e0371257aacbdbb8}{scramble}} (uint32\+\_\+t x) const
+\begin{DoxyCompactList}\small\item\em Нелинейное перемешивание 32-\/битного слова (XOR + сдвиги). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_f_g___x_o_r_acfb453651d608d363ec8c3e76c8f9d61}{init\+Buffer}} (uint32\+\_\+t seed)
+\begin{DoxyCompactList}\small\item\em Инициализация буфера с заданным seed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_l_f_g___x_o_r_a0bd08792570cf5ed4c781af2242fbb0c}{buffer}} \mbox{[}\mbox{\hyperlink{class_l_f_g___x_o_r_a46abca10517b884ca66a2c45496916be}{LAG1}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Буфер состояний \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_l_f_g___x_o_r_a3976df7f21bee60af25781aec0250b15}{index}}
+\begin{DoxyCompactList}\small\item\em Текущий индекс \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_l_f_g___x_o_r_a46abca10517b884ca66a2c45496916be}{LAG1}} = 55
+\begin{DoxyCompactList}\small\item\em Первый лаг \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{class_l_f_g___x_o_r_ae05af29fd91b4ab094367582c510320e}{LAG2}} = 24
+\begin{DoxyCompactList}\small\item\em Второй лаг \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Генератор Фибоначчи с запаздыванием и XOR (LFG-\/\+XOR). 
+
+Базовый алгоритм\+: LFG с лагами (55,24). Модификации\+:
+\begin{DoxyItemize}
+\item Вместо сложения используется XOR (быстрее, лучше перемешивание).
+\item Добавлена нелинейная функция scramble после обновлений.
+\item Улучшенная инициализация буфера через LCG и перемешивание. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_l_f_g___x_o_r_a93a97498605af287be38a61009ef0f1e}\label{class_l_f_g___x_o_r_a93a97498605af287be38a61009ef0f1e} 
+\index{LFG\_XOR@{LFG\_XOR}!result\_type@{result\_type}}
+\index{result\_type@{result\_type}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{result\_type}{result\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_l_f_g___x_o_r_a93a97498605af287be38a61009ef0f1e}{LFG\+\_\+\+XOR\+::result\+\_\+type}} = uint32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_l_f_g___x_o_r_aedee0d3555a3c24dc0a9198a3fbd0075}\label{class_l_f_g___x_o_r_aedee0d3555a3c24dc0a9198a3fbd0075} 
+\index{LFG\_XOR@{LFG\_XOR}!LFG\_XOR@{LFG\_XOR}}
+\index{LFG\_XOR@{LFG\_XOR}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{LFG\_XOR()}{LFG\_XOR()}}
+{\footnotesize\ttfamily LFG\+\_\+\+XOR\+::\+LFG\+\_\+\+XOR (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed = {\ttfamily 123456789} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_l_f_g___x_o_r}{LFG\+\_\+\+XOR}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789).\\
+\hline
+{\em seed} & начальное значение (по умолчанию 123456789). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_f_g___x_o_r_acfb453651d608d363ec8c3e76c8f9d61}\label{class_l_f_g___x_o_r_acfb453651d608d363ec8c3e76c8f9d61} 
+\index{LFG\_XOR@{LFG\_XOR}!initBuffer@{initBuffer}}
+\index{initBuffer@{initBuffer}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{initBuffer()}{initBuffer()}}
+{\footnotesize\ttfamily void LFG\+\_\+\+XOR\+::init\+Buffer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Инициализация буфера с заданным seed. 
+
+Инициализация буфера генератора.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & начальное значение для инициализации.\\
+\hline
+\end{DoxyParams}
+Алгоритм\+:
+\begin{DoxyEnumerate}
+\item Заполняем буфер размера LAG1 (55) с помощью LCG (state = state\texorpdfstring{$\ast$}{*}1103515245+12345). Каждое значение сразу пропускается через scramble для начального перемешивания.
+\item Затем 5 раз проходим по буферу\+: для каждого i берём элемент с отставанием j = (i + LAG2) \% LAG1, делаем XOR и снова scramble. Это гарантирует, что все начальные значения хорошо перемешаны и нет зависимости от seed. 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_a498cca65253cb75a4e52303f095b794f}\label{class_l_f_g___x_o_r_a498cca65253cb75a4e52303f095b794f} 
+\index{LFG\_XOR@{LFG\_XOR}!max@{max}}
+\index{max@{max}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily static constexpr uint32\+\_\+t LFG\+\_\+\+XOR\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Максимальное значение, возвращаемое \doxylink{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}{next()}. 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_a632448268ea39161ceffb83456c0a2f8}\label{class_l_f_g___x_o_r_a632448268ea39161ceffb83456c0a2f8} 
+\index{LFG\_XOR@{LFG\_XOR}!min@{min}}
+\index{min@{min}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily static constexpr uint32\+\_\+t LFG\+\_\+\+XOR\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Минимальное значение, возвращаемое \doxylink{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}{next()}. 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419}\label{class_l_f_g___x_o_r_a7369f205675741a0e09b9464b15dd419} 
+\index{LFG\_XOR@{LFG\_XOR}!next@{next}}
+\index{next@{next}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily uint32\+\_\+t LFG\+\_\+\+XOR\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Генерирует 32-\/битное псевдослучайное число. 
+
+Генерирует следующее 32-\/битное псевдослучайное число.
+
+\begin{DoxyReturn}{Returns}
+случайное число.
+\end{DoxyReturn}
+Если индекс достиг конца буфера (index \texorpdfstring{$>$}{>}= LAG1), то\+:
+\begin{DoxyItemize}
+\item проходим по всему буферу, для каждого i обновляем buffer\mbox{[}i\mbox{]} по правилу buffer\mbox{[}i\mbox{]} \texorpdfstring{$^\wedge$}{\string^}= buffer\mbox{[}(i + LAG2) \% LAG1\mbox{]}, затем применяем scramble.
+\item сбрасываем индекс на 0. Затем возвращаем buffer\mbox{[}index++\mbox{]} и увеличиваем индекс. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00126}{126}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_aeb380a558c99d672e0371257aacbdbb8}\label{class_l_f_g___x_o_r_aeb380a558c99d672e0371257aacbdbb8} 
+\index{LFG\_XOR@{LFG\_XOR}!scramble@{scramble}}
+\index{scramble@{scramble}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{scramble()}{scramble()}}
+{\footnotesize\ttfamily uint32\+\_\+t LFG\+\_\+\+XOR\+::scramble (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Нелинейное перемешивание 32-\/битного слова (XOR + сдвиги). 
+
+Нелинейное перемешивание 32-\/битного слова.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & входное 32-\/битное число. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+перемешанное число.
+\end{DoxyReturn}
+Применяются три операции\+: сдвиг влево, сдвиг вправо и XOR. 
+
+Definition at line \mbox{\hyperlink{rng__generators_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{rng__generators_8cpp_source}{rng\+\_\+generators.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_l_f_g___x_o_r_a0bd08792570cf5ed4c781af2242fbb0c}\label{class_l_f_g___x_o_r_a0bd08792570cf5ed4c781af2242fbb0c} 
+\index{LFG\_XOR@{LFG\_XOR}!buffer@{buffer}}
+\index{buffer@{buffer}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily uint32\+\_\+t LFG\+\_\+\+XOR\+::buffer\mbox{[}\mbox{\hyperlink{class_l_f_g___x_o_r_a46abca10517b884ca66a2c45496916be}{LAG1}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Буфер состояний 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_a3976df7f21bee60af25781aec0250b15}\label{class_l_f_g___x_o_r_a3976df7f21bee60af25781aec0250b15} 
+\index{LFG\_XOR@{LFG\_XOR}!index@{index}}
+\index{index@{index}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int LFG\+\_\+\+XOR\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Текущий индекс 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_a46abca10517b884ca66a2c45496916be}\label{class_l_f_g___x_o_r_a46abca10517b884ca66a2c45496916be} 
+\index{LFG\_XOR@{LFG\_XOR}!LAG1@{LAG1}}
+\index{LAG1@{LAG1}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{LAG1}{LAG1}}
+{\footnotesize\ttfamily constexpr int LFG\+\_\+\+XOR\+::\+LAG1 = 55\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Первый лаг 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+\Hypertarget{class_l_f_g___x_o_r_ae05af29fd91b4ab094367582c510320e}\label{class_l_f_g___x_o_r_ae05af29fd91b4ab094367582c510320e} 
+\index{LFG\_XOR@{LFG\_XOR}!LAG2@{LAG2}}
+\index{LAG2@{LAG2}!LFG\_XOR@{LFG\_XOR}}
+\doxysubsubsection{\texorpdfstring{LAG2}{LAG2}}
+{\footnotesize\ttfamily constexpr int LFG\+\_\+\+XOR\+::\+LAG2 = 24\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Второй лаг 
+
+
+
+Definition at line \mbox{\hyperlink{rng__generators_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{rng__generators_8hpp_source}{rng\+\_\+generators.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rng__generators_8hpp}{rng\+\_\+generators.\+hpp}}\item 
+\mbox{\hyperlink{rng__generators_8cpp}{rng\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

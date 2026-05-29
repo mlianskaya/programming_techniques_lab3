@@ -1,0 +1,66 @@
+\doxysection{nist\+::Frequency\+Test Struct Reference}
+\hypertarget{structnist_1_1_frequency_test}{}\label{structnist_1_1_frequency_test}\index{nist::FrequencyTest@{nist::FrequencyTest}}
+
+
+Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/2.  
+
+
+
+
+{\ttfamily \#include $<$NISTTests.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4}{Frequency\+Test}} (const std\+::vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structnist_1_1_frequency_test_a25c3e148cb611e3b7788a1088bca9acc}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/2. 
+
+Статистика\+: S\+\_\+n = (количество единиц) -\/ (количество нулей). Нормированная статистика\+: S = \texorpdfstring{$\vert$}{|}\+S\+\_\+n\texorpdfstring{$\vert$}{|} / √n. p-\/value = erfc(S/√2). Если p-\/value ≥ α, последовательность случайна. 
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4}\label{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4} 
+\index{nist::FrequencyTest@{nist::FrequencyTest}!FrequencyTest@{FrequencyTest}}
+\index{FrequencyTest@{FrequencyTest}!nist::FrequencyTest@{nist::FrequencyTest}}
+\doxysubsubsection{\texorpdfstring{FrequencyTest()}{FrequencyTest()}}
+{\footnotesize\ttfamily nist\+::\+Frequency\+Test\+::\+Frequency\+Test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & входная битовая последовательность. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_frequency_test_a25c3e148cb611e3b7788a1088bca9acc}\label{structnist_1_1_frequency_test_a25c3e148cb611e3b7788a1088bca9acc} 
+\index{nist::FrequencyTest@{nist::FrequencyTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::FrequencyTest@{nist::FrequencyTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily double nist\+::\+Frequency\+Test\+::p\+\_\+value}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_i_s_t_tests_8hpp}{NISTTests.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\doxysection{Chi\+Squared.\+hpp File Reference}
+\hypertarget{_chi_squared_8hpp}{}\label{_chi_squared_8hpp}\index{ChiSquared.hpp@{ChiSquared.hpp}}
+
+
+Реализация критерия согласия хи-\/квадрат (Пирсона) для проверки равномерности распределения.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecustom}{custom}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{custom\+::\+Distribution\+Type}} \{ \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a4ceeb02eaaf32c9b4d2b2a841da927b1}{custom\+::\+UNIFORM\+\_\+\+INT}}
+, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78a643cdf96101ab65dbfcb125f0c1506c8}{custom\+::\+UNIFORM\+\_\+\+REAL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Тип распределения\+: целочисленное равномерное или непрерывное равномерное. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Number $>$ }\\std\+::pair$<$ double, std\+::size\+\_\+t $>$ \mbox{\hyperlink{namespacecustom_aeaf50ca8e1ffb6be2c87e235e1620717}{custom\+::chi\+\_\+squared}} (const std\+::vector$<$ Number $>$ \&sample, Number min, Number max, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Вычисляет статистику хи-\/квадрат и число степеней свободы для выборки. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Number $>$ }\\bool \mbox{\hyperlink{namespacecustom_aa29ff4e045ea5489e56db6fecbfb540e}{custom\+::chi\+\_\+squared\+\_\+test}} (const std\+::vector$<$ Number $>$ \&sample, Number min, Number max, double significance, \mbox{\hyperlink{namespacecustom_aa5d6189233047a025ae68ae20bf8ee78}{Distribution\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Проверяет гипотезу о равномерном распределении выборки по критерию хи-\/квадрат. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация критерия согласия хи-\/квадрат (Пирсона) для проверки равномерности распределения. 
+
+Содержит функции chi\+\_\+squared (вычисление статистики и степеней свободы) и chi\+\_\+squared\+\_\+test (проверка гипотезы на заданном уровне значимости). 
+
+Definition in file \mbox{\hyperlink{_chi_squared_8hpp_source}{Chi\+Squared.\+hpp}}.
+

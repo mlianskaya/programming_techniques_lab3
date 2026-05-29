@@ -1,0 +1,68 @@
+\doxysection{nist\+::Block\+Frequency\+Test Struct Reference}
+\hypertarget{structnist_1_1_block_frequency_test}{}\label{structnist_1_1_block_frequency_test}\index{nist::BlockFrequencyTest@{nist::BlockFrequencyTest}}
+
+
+Блочный частотный тест — проверяет равномерность распределения единиц внутри блоков фиксированного размера.  
+
+
+
+
+{\ttfamily \#include $<$NISTTests.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnist_1_1_block_frequency_test_a4fbb51033df1bc13a22f98965cfdac9a}{Block\+Frequency\+Test}} (const std\+::vector$<$ bool $>$ \&bits, size\+\_\+t block\+Size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structnist_1_1_block_frequency_test_a15eec1a469eb413f54d47f708f2edb9f}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Блочный частотный тест — проверяет равномерность распределения единиц внутри блоков фиксированного размера. 
+
+Последовательность разбивается на N непересекающихся блоков размера M. Для каждого блока вычисляется доля единиц π\+\_\+i. Статистика\+: χ² = 4M Σ (π\+\_\+i -\/ 0.\+5)². Приближённо распределена как χ² с N степенями свободы. Для больших N используется нормальная аппроксимация. 
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_block_frequency_test_a4fbb51033df1bc13a22f98965cfdac9a}\label{structnist_1_1_block_frequency_test_a4fbb51033df1bc13a22f98965cfdac9a} 
+\index{nist::BlockFrequencyTest@{nist::BlockFrequencyTest}!BlockFrequencyTest@{BlockFrequencyTest}}
+\index{BlockFrequencyTest@{BlockFrequencyTest}!nist::BlockFrequencyTest@{nist::BlockFrequencyTest}}
+\doxysubsubsection{\texorpdfstring{BlockFrequencyTest()}{BlockFrequencyTest()}}
+{\footnotesize\ttfamily nist\+::\+Block\+Frequency\+Test\+::\+Block\+Frequency\+Test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{bits,  }\item[{size\+\_\+t}]{block\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & входная последовательность. \\
+\hline
+{\em block\+Size} & размер блока (в битах). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_block_frequency_test_a15eec1a469eb413f54d47f708f2edb9f}\label{structnist_1_1_block_frequency_test_a15eec1a469eb413f54d47f708f2edb9f} 
+\index{nist::BlockFrequencyTest@{nist::BlockFrequencyTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::BlockFrequencyTest@{nist::BlockFrequencyTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily double nist\+::\+Block\+Frequency\+Test\+::p\+\_\+value}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_i_s_t_tests_8hpp}{NISTTests.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,61 @@
+\doxysection{nist\+::Runs\+Test Struct Reference}
+\hypertarget{structnist_1_1_runs_test}{}\label{structnist_1_1_runs_test}\index{nist::RunsTest@{nist::RunsTest}}
+
+
+Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению.  
+
+
+
+
+{\ttfamily \#include $<$NISTTests.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5}{Runs\+Test}} (const std\+::vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению. 
+
+Пусть π = количество единиц / n. Если π не слишком отличается от 0.\+5, статистика\+: Z = (R -\/ 2nπ(1-\/π)) / (2√(2n)π(1-\/π)), где R — общее число серий. p-\/value = erfc(\texorpdfstring{$\vert$}{|}\+Z\texorpdfstring{$\vert$}{|}/√2). Малое p-\/value указывает на корреляцию соседних битов. 
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5}\label{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5} 
+\index{nist::RunsTest@{nist::RunsTest}!RunsTest@{RunsTest}}
+\index{RunsTest@{RunsTest}!nist::RunsTest@{nist::RunsTest}}
+\doxysubsubsection{\texorpdfstring{RunsTest()}{RunsTest()}}
+{\footnotesize\ttfamily nist\+::\+Runs\+Test\+::\+Runs\+Test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00106}{106}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b}\label{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b} 
+\index{nist::RunsTest@{nist::RunsTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::RunsTest@{nist::RunsTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily double nist\+::\+Runs\+Test\+::p\+\_\+value}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_i_s_t_tests_8hpp}{NISTTests.\+hpp}}\end{DoxyCompactItemize}

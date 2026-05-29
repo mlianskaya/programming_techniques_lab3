@@ -1,0 +1,61 @@
+\doxysection{nist\+::Longest\+Run\+Test Struct Reference}
+\hypertarget{structnist_1_1_longest_run_test}{}\label{structnist_1_1_longest_run_test}\index{nist::LongestRunTest@{nist::LongestRunTest}}
+
+
+Тест на самую длинную серию — проверяет, не является ли максимальная длина серии в блоках слишком большой (что указывает на неслучайность).  
+
+
+
+
+{\ttfamily \#include $<$NISTTests.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnist_1_1_longest_run_test_adb23f59810ba5902f7bdbf34e5bedbfe}{Longest\+Run\+Test}} (const std\+::vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structnist_1_1_longest_run_test_a57c92c8834fd7cacce8fe3efaafee8e3}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Тест на самую длинную серию — проверяет, не является ли максимальная длина серии в блоках слишком большой (что указывает на неслучайность). 
+
+Последовательность разбивается на блоки по 8 бит. Для каждого блока находится максимальная длина серии (подряд идущих одинаковых битов). Затем сравнивается наблюдаемое распределение максимальных длин с теоретическим. Статистика χ² рассчитывается по 7 категориям (длина ≤1, 2, 3, 4, 5, 6, ≥7). p-\/value вычисляется приближённо как exp(-\/χ²/2). 
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_longest_run_test_adb23f59810ba5902f7bdbf34e5bedbfe}\label{structnist_1_1_longest_run_test_adb23f59810ba5902f7bdbf34e5bedbfe} 
+\index{nist::LongestRunTest@{nist::LongestRunTest}!LongestRunTest@{LongestRunTest}}
+\index{LongestRunTest@{LongestRunTest}!nist::LongestRunTest@{nist::LongestRunTest}}
+\doxysubsubsection{\texorpdfstring{LongestRunTest()}{LongestRunTest()}}
+{\footnotesize\ttfamily nist\+::\+Longest\+Run\+Test\+::\+Longest\+Run\+Test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00145}{145}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_longest_run_test_a57c92c8834fd7cacce8fe3efaafee8e3}\label{structnist_1_1_longest_run_test_a57c92c8834fd7cacce8fe3efaafee8e3} 
+\index{nist::LongestRunTest@{nist::LongestRunTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::LongestRunTest@{nist::LongestRunTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily double nist\+::\+Longest\+Run\+Test\+::p\+\_\+value}
+
+
+
+Definition at line \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source_l00143}{143}} of file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_i_s_t_tests_8hpp}{NISTTests.\+hpp}}\end{DoxyCompactItemize}

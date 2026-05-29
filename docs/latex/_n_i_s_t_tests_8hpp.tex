@@ -1,0 +1,52 @@
+\doxysection{NISTTests.\+hpp File Reference}
+\hypertarget{_n_i_s_t_tests_8hpp}{}\label{_n_i_s_t_tests_8hpp}\index{NISTTests.hpp@{NISTTests.hpp}}
+
+
+Реализация пяти статистических тестов из набора NIST SP 800-\/22.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnist_1_1_frequency_test}{nist\+::\+Frequency\+Test}}
+\begin{DoxyCompactList}\small\item\em Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/2. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_block_frequency_test}{nist\+::\+Block\+Frequency\+Test}}
+\begin{DoxyCompactList}\small\item\em Блочный частотный тест — проверяет равномерность распределения единиц внутри блоков фиксированного размера. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_runs_test}{nist\+::\+Runs\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_longest_run_test}{nist\+::\+Longest\+Run\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест на самую длинную серию — проверяет, не является ли максимальная длина серии в блоках слишком большой (что указывает на неслучайность). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnist_1_1_cumulative_sums_test}{nist\+::\+Cumulative\+Sums\+Test}}
+\begin{DoxyCompactList}\small\item\em Тест кумулятивных сумм — проверяет, насколько сильно отклоняется накопленная сумма (присваивая биту \textquotesingle{}1\textquotesingle{} +1, биту \textquotesingle{}0\textquotesingle{} –1) от нуля. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacenist}{nist}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespacenist_a827291712dbdca780333cd14dec10159}{nist\+::erfc}} (double x)
+\begin{DoxyCompactList}\small\item\em Дополнительная функция ошибок (erfc) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация пяти статистических тестов из набора NIST SP 800-\/22. 
+
+Набор тестов предназначен для проверки случайности битовых последовательностей. Реализованы следующие тесты\+:
+\begin{DoxyItemize}
+\item Frequency (Monobit) Test (проверка глобальной доли единиц)
+\item Block Frequency Test (проверка равномерности внутри блоков)
+\item Runs Test (проверка количества серий)
+\item Longest Run Test (проверка максимальной длины серии)
+\item Cumulative Sums Test (проверка случайности накопленной суммы)
+\end{DoxyItemize}
+
+Все тесты вычисляют p-\/value. Если p-\/value ≥ заданного уровня значимости, последовательность считается случайной. 
+
+Definition in file \mbox{\hyperlink{_n_i_s_t_tests_8hpp_source}{NISTTests.\+hpp}}.
+
