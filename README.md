@@ -7,7 +7,7 @@
 [GitHub](https://github.com/mlianskaya/programming_techniques_lab3)
 
 ## Графики
-![prng_performance.png](https://github.com/mlianskaya/programming_techniques_lab3/blob/main/prng_performance)
+![prng_performance.png](https://github.com/mlianskaya/programming_techniques_lab3/blob/main/prng_performance.png?raw=true)
 
 ## Описание
 В работе реализованы три модифицированных генератора псевдослучайных чисел:
