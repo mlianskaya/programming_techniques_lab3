@@ -33,9 +33,6 @@ public:
     /** @brief Генерирует 64-битное псевдослучайное число. */
     uint64_t next();
 
-    /** @brief Генерирует число с плавающей точкой в диапазоне [0, 1). */
-    double nextDouble();
-
     /** @brief Минимальное значение, возвращаемое next(). */
     static constexpr uint64_t min() { return 0; }
 
@@ -67,9 +64,6 @@ public:
 
     /** @brief Генерирует 32-битное псевдослучайное число. */
     uint32_t next();
-
-    /** @brief Генерирует число с плавающей точкой в диапазоне [0, 1). */
-    double nextDouble();
 
     /** @brief Минимальное значение, возвращаемое next(). */
     static constexpr uint32_t min() { return 0; }
@@ -109,9 +103,6 @@ public:
 
     /** @brief Генерирует 64-битное псевдослучайное число. */
     uint64_t next();
-
-    /** @brief Генерирует число с плавающей точкой в диапазоне [0, 1). */
-    double nextDouble();
 
     /** @brief Минимальное значение, возвращаемое next(). */
     static constexpr uint64_t min() { return 0; }
